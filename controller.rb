@@ -9,12 +9,12 @@ get '/' do
   erb (:home)
 end
 
-get '/ rules' do
+get '/rules' do
   erb (:rules)
 end
 
 get '/play/:player_input/:pc_input' do
   game = Game.new(params[:player_input], params[:pc_input])
   @results = game.play()
-  erb (:result)
+  erb (:results)
 end
